@@ -1,0 +1,111 @@
+﻿@{
+
+    Layout = "/Views/Shared/User_Layout.cshtml";
+}
+
+@model List<PaintingGallery.Models.Image>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <title> World </title>
+    
+
+</head>
+
+<body style="background-image:url('/Content/Images/background.jpg');background-position:center">
+
+
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/Content/Images/bg.png')">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    <div class="site-heading col-md-push-4">
+                        <h1>  <br /><text style="font-size:60px;color:black">  World Gallery </text> </h1>
+
+                        <p> Welcome to the Digital Art World :) </p>
+
+                        <br /> <br /> <br /> <br /><br /><br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+    </header>
+
+    <style>
+        form{
+    
+    display:inline-block;  
+    vertical-align:central;    
+}
+    </style>
+
+    @{
+
+
+        int i = -1;
+        foreach (var I in Model)
+        {
+            i++;
+            if (i == 3)
+            {
+                i = 0;
+                <br />
+
+            }
+
+
+
+
+            <form id="theForm" method="post" action="/ImageView/Index/@I.Id">  <input type="image" src="@I.PUrl" class="img1"  /> </form>
+
+    <style>
+        .img1 {
+            display: inline-block;
+            height: auto;
+            max-width: 300px;
+            margin-left: 45px;
+            margin-top: 20px;
+            border: solid;
+            border-radius: 5px;
+        }
+    </style>
+
+
+
+        }
+
+
+
+
+    }
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+</body>
+
+
+</html>

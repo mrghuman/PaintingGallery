@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+@model PaintingGallery.Models.Data
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <title> ArtnDesign</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    
+</head>
+
+
+    
+
+    <body style="background-image:url('/Content/Images/background.jpg');background-size:cover">
+
+        
+
+
+
+        <div class="container">
+
+            <div class="row" style="margin-top:40px">
+                <div class="col-md-12" style="text-align:center; background-position:center; background-repeat:no-repeat ;background-image:url(/Content/Images/bg2.png)"> <font size="48" style="margin-top:20px;color:black; "> <b> Art n Artist </b> </font> </div>
+            </div>
+
+
+        </div>
+
+        <style>
+                img {
+                    display: inline-block;
+                    height: auto;
+                    max-width: 300px;
+                    margin-left: 45px;
+                    margin-top: 90px;
+                    border: solid;
+                    border-radius: 5px;
+                }
+
+                h1 {
+                    font-family: Calibri;
+                    color: black;
+                    font-weight: bolder;
+                    font-size: 40px;
+                }
+
+                .myTitle {
+                    font-family: Calibri;
+                    color: black;
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+
+                .myT {
+                    font-family: Calibri;
+                    color: black;
+                    font-weight: bolder;
+                    font-size: 35px;
+                }
+
+
+                
+        </style>
+
+
+        <br /> <br />
+        <div class="row">
+
+            <div class=" col-lg-3">
+
+                <form id="theForm" method="post" action="/Test/Index/@Model.I.Id">  <input type="image" src="@Model.I.PUrl" class="img1" /> </form>
+                
+
+            </div>
+
+            <style>
+                .img1 {
+                    display: inline-block;
+                    height: auto;
+                    max-width: 300px;
+                    margin-left: 45px;
+                    margin-top: 20px;
+                    border: solid;
+                    border-radius: 5px;
+                }
+            </style>
+
+
+
+            <div class="col-lg-offset-1 col-lg-6">
+
+
+                <h1 style="text-shadow:40px;background-size:31%; background-repeat:no-repeat ;background-image:url(/Content/Images/bg3.png)"> Art Details </h1>
+                <hr />
+                <text class="myTitle">  Title : <text class="myT"> @Model.I.PName</text> </text>
+                <text class="myTitle" style="margin-left:120px">  Price :  @Model.I.PPrice </text>
+                <br />
+
+                <text class="myTitle"> Description : <text class="myT"> @Model.I.PDescription $</text> </text>
+                <br />
+                <br />
+
+                <h1 style="text-shadow:40px;background-size:38%; background-repeat:no-repeat ;background-image:url(/Content/Images/bg3.png)"> Artist Details </h1>
+                <hr />
+                <text class="myTitle">  Name : <text class="myT"> @Model.obj.FirstName @Model.obj.LastName</text> </text>
+
+                <br />
+                <text class="myTitle">  Contact#: <text class="myT"> @Model.obj.Phone </text> </text>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+        
+        <br /> <br /> <br /> <br /><br /><br /><br />
+
+
+
+
+
+    </body>
+</html>
+
+
+

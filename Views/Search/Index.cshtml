@@ -1,0 +1,214 @@
+﻿@{
+
+    Layout = "/Views/Shared/User_Layout.cshtml";
+}
+
+@model List<PaintingGallery.Models.Image>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <title> Search </title>
+
+
+    
+
+
+
+
+
+</head>
+
+<body style="background-image:url('/Content/Images/background.jpg');background-position:center">
+
+
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/Content/Images/bg.png')">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    <div class="site-heading col-md-push-4">
+                        <h1>  <br /><text style="font-size:60px;color:black">  Search </text> </h1>
+
+                        <p> Look into to the digital gallery :) </p>
+
+                        <br /> <br /> <br /> <br /><br /><br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </header>
+
+    <style>
+        form {
+            display: inline-block;
+            vertical-align: central;
+        }
+    </style>
+
+    @{
+    /*
+
+        int i = -1;
+        foreach (var I in Model)
+        {
+            i++;
+            if (i == 3)
+            {
+                i = 0;
+                <br />
+
+            }
+
+
+
+
+            <form id="theForm" method="post" action="/ImageView/Index/@I.Id">  <input type="image" src="@I.PUrl" class="img1" /> </form>
+
+            <style>
+                .img1 {
+                    display: inline-block;
+                    height: auto;
+                    max-width: 300px;
+                    margin-left: 45px;
+                    margin-top: 20px;
+                    border: solid;
+                    border-radius: 5px;
+                }
+            </style>
+
+
+
+
+        */
+
+
+    }
+
+    <div class="row " style="margin-top:10px; ">
+        <div class="col-md-6">
+            <input id="t1" type="text" class="  col-lg-push-10 col-md-4  form-control" value="Enter Painting Title">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <button id="b1" style="margin-top:10px" type="submit" class="btn btn-primary col-lg-push-11 col-md-4 "> Submit </button>
+        </div>
+
+    </div>
+
+    <div id="d1" style="text-align:center"> </div>
+
+    <style>
+        
+
+                .img1 {
+                    display: inline-block;
+                    height: auto;
+                    max-width: 800px;
+                    
+                    margin-top: 90px;
+                    border: solid;
+                    border-radius: 5px;
+                }
+
+                h3{
+                    color:black;
+                    
+                    text-align:center;
+
+                }
+        </Style>
+    <!--- ------------------------------------------------------------------>
+
+    @section scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script type="text/jscript">
+            $(document).ready(function(){ $("#b1").on('click', S);});
+
+            function S()
+            {
+                var key = $("#t1").val();
+                //alert(key);
+                AjaxSearch();
+
+            }
+
+            function AjaxSearch() {
+
+
+                $.ajax({
+                    url: "/Search/Searching/?key="+$("#t1").val(),
+                    type: "POST",
+                    success: function (data)
+                    {
+
+                        $("#d1").html(data);
+                    }
+                });
+            }
+
+        </script>
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+</body>
+
+
+</html>

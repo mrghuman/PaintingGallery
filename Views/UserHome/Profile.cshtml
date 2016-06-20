@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+@model PaintingGallery.Models.User
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <title> SignUp</title>
+    <meta name="viewport" content="width=device-width" />
+
+
+</head>
+
+
+
+<body style="background-image:url('/Content/Images/background.jpg');background-size:cover">
+
+
+    <style>
+        .myT {
+            font: bold 30px "Century Schoolbook", Georgia, Times, serif;
+            color: black;
+            line-height: 90%;
+            margin: .2em 0 .4em 0;
+            letter-spacing: -2px;
+        }
+
+        .myS {
+            font: bold 22px "Century Schoolbook", Georgia, Times, serif;
+            color: #333;
+            line-height: 90%;
+            margin: .2em 0 .4em 0;
+            margin-top: 6px;
+            letter-spacing: -2px;
+            color: black;
+        }
+    </style>
+
+
+
+    <!-- <p> model.city </p> -->
+    <div class="container">
+
+        <div class="row" style="margin-top:40px">
+            <div class="col-md-12" style="text-align:center; background-position:center; background-repeat:no-repeat ;background-image:url(/Content/Images/bg2.png)"> <font size="48" style="margin-top:20px;color:black; "> <b> User Profile</b> </font> </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:80px">
+        <div class="col-lg-offset-3 col-lg-2">
+            <label class="myS pull-right"> Name: </label>
+
+        </div>
+        <div class="col-lg-3">
+            <text class="myT"> @Model.FirstName @Model.LastName </text>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-lg-offset-3 col-lg-2">
+            <label class="myS pull-right"> Email : </label>
+
+        </div>
+        <div class="col-lg-2">
+            <text class="myT"> @Model.Username </text>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-lg-offset-3 col-lg-2">
+            <label class="myS pull-right"> Password : </label>
+
+        </div>
+        <div class="col-lg-2">
+            <text class="myT"> @Model.Password </text>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-lg-offset-3 col-lg-2">
+            <label class="myS pull-right">
+               Contact : </label>
+
+        </div>
+        <div class="col-lg-2">
+            <text class="myT"> @Model.Phone </text>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-lg-offset-3 col-lg-2">
+            <label class="myS pull-right"> City : </label>
+
+        </div>
+        <div class="col-lg-2">
+            <text class="myT">
+                @Model.City
+            </text>
+        </div>
+    </div>
+
+
+    <br />
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br /> <br /> <br /> <br />
+
+
+
+
+
+</body>
+</html>
